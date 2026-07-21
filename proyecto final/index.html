@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Adivina el número</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🎯 Adivina el número</h1>
+            <p class="subtitle">La computadora ha generado un número entre <strong>1</strong> y <strong>100</strong></p>
+        </header>
+
+        <main>
+            <div class="game-container">
+                <!-- Contador de intentos -->
+                <div class="stats">
+                    <span id="intentos">Intentos: 0</span>
+                    <span id="rango">Rango: 1 - 100</span>
+                </div>
+
+                <!-- Área de juego principal -->
+                <div class="game-area">
+                    <input type="number" id="numero" placeholder="Ingresa un número" min="1" max="100">
+                    <button id="adivinar">🔍 Adivinar</button>
+                    <button id="reiniciar">🔄 Nuevo juego</button>
+                </div>
+
+                <!-- Mensajes y pistas -->
+                <div id="mensaje" class="mensaje"></div>
+                
+                <!-- Historial de intentos -->
+                <div class="historial">
+                    <h3>📋 Historial de intentos</h3>
+                    <ul id="historialLista"></ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>💡 Tip: El número está entre 1 y 100</p>
+        </footer>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
