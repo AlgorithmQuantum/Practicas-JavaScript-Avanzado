@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Registro de Eventos</h1>
+            <p>Complete el formulario para inscribirse en nuestro próximo evento</p>
+        </header>
+
+        <form id="eventForm" novalidate>
+            <!-- Información Personal -->
+            <section class="form-section">
+                <h2>Información Personal</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                        <span class="error-message" id="nombre-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 555-1234-567" required>
+                        <span class="error-message" id="telefono-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edad">Edad *</label>
+                        <input type="number" id="edad" name="edad" placeholder="18" min="18" max="100" required>
+                        <span class="error-message" id="edad-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pais">País *</label>
+                        <select id="pais" name="pais" required>
+                            <option value="">Seleccione un país</option>
+                            <option value="Mexico">México</option>
+                            <option value="España">España</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Peru">Perú</option>
+                            <option value="USA">Estados Unidos</option>
+                            <option value="Other">Otro</option>
+                        </select>
+                        <span class="error-message" id="pais-error"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Intereses -->
+            <section class="form-section">
+                <h2>Intereses en el Evento</h2>
+                <div class="interests-grid">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="tech" name="intereses" value="tecnologia">
+                        <label for="tech">💻 Tecnología</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="design" name="intereses" value="diseno">
+                        <label for="design">🎨 Diseño</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="marketing" name="intereses" value="marketing">
+                        <label for="marketing">📊 Marketing</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="business" name="intereses" value="negocios">
+                        <label for="business">💼 Negocios</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="innovation" name="intereses" value="innovacion">
+                        <label for="innovation">🚀 Innovación</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="networking" name="intereses" value="networking">
+                        <label for="networking">🤝 Networking</label>
+                    </div>
+                </div>
+                <span class="error-message" id="intereses-error"></span>
+            </section>
+
+            <!-- Horario -->
+            <section class="form-section">
+                <h2>Horario de Asistencia</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fecha">Fecha del evento *</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                        <span class="error-message" id="fecha-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="horario">Horario preferido *</label>
+                        <select id="horario" name="horario" required>
+                            <option value="">Seleccione un horario</option>
+                            <option value="matutino">🌅 Matutino (9:00 - 13:00)</option>
+                            <option value="vespertino">🌇 Vespertino (14:00 - 18:00)</option>
+                            <option value="nocturno">🌙 Nocturno (19:00 - 22:00)</option>
+                            <option value="completo">📅 Día completo</option>
+                        </select>
+                        <span class="error-message" id="horario-error"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Documento -->
+            <section class="form-section">
+                <h2>Documento de Identificación</h2>
+                <div class="form-group">
+                    <label for="documento">Subir documento (opcional)</label>
+                    <input type="file" id="documento" name="documento" accept=".pdf,.jpg,.jpeg,.png">
+                    <small class="help-text">Formatos permitidos: PDF, JPG, PNG (máx. 5MB)</small>
+                    <span class="error-message" id="documento-error"></span>
+                </div>
+            </section>
+
+            <!-- Términos y Enviar -->
+            <section class="form-section">
+                <div class="terms">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto los <a href="#" onclick="alert('Términos y condiciones del evento')">términos y condiciones</a> *</label>
+                    </div>
+                    <span class="error-message" id="terminos-error"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-secondary">🗑️ Limpiar</button>
+                    <button type="submit" class="btn btn-primary">📝 Registrar Asistente</button>
+                </div>
+            </section>
+        </form>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            <h2>✅ ¡Registro Exitoso!</h2>
+            <p>Su inscripción ha sido procesada correctamente.</p>
+            <p>Recibirá un correo de confirmación en breve.</p>
+            <button onclick="location.reload()" class="btn btn-primary">Nuevo Registro</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
